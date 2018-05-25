@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<LabRun>
+    <Machine Image="MD.WinBluex64RTM" Name="PERFOTTER09">
+        <OS>
+            <Version>6.3.9600</Version>
+            <Name>Microsoft Windows 8.1 Enterprise</Name>
+            <ShortName>WinBlue Ult x64</ShortName>
+            <SubOSShortName>WinBlue Ult x64</SubOSShortName>
+            <Language>English</Language>
+            <Architecture>amd64</Architecture>
+            <FileSystem>NTFS</FileSystem>
+            <ServicePack />
+            <HotFixes Num="1">
+                <HotFix>KB100000</HotFix>
+            </HotFixes>
+        </OS>
+        <Hardware>
+            <Processor Num="4">Intel(R) Xeon(R) CPU E3-1225 V2 @ 3.20GHz [Intel64 Family 6 Model 58 Stepping 9]</Processor>
+            <Memory>3984</Memory>
+            <HardDrives Num="2">
+                <HardDrive>Hitachi HUA722010CLA330 IDE[931.51 GB]</HardDrive>
+                <HardDrive>Hitachi HUA722010CLA330 IDE[931.51 GB]</HardDrive>
+            </HardDrives>
+            <VideoCards Num="1">
+                <VideoCard>Microsoft Basic Display Adapter, drv:not available</VideoCard>
+            </VideoCards>
+        </Hardware>
+        <Product Database="CLRPerf" RunId="166017">
+            <BuildNum>4.5.03095.00</BuildNum>
+            <Milestone>Dev14</Milestone>
+            <Release>Dev14</Release>
+            <Lab>NetFXDev1</Lab>
+            <Architecture>AMD64</Architecture>
+            <Flavor>Ret</Flavor>
+            <Language>ENU</Language>
+            <Sku>Full</Sku>
+            <InstallType>OOB</InstallType>
+        </Product>
+    </Machine>
+    <TestCases>
+        <TestCase Lang="C#" Name="Zip Startup (ETL)" VersionID="4930" WorkingDir="CS">
+            <File>ruby</File>
+            <Args>winstartup.rb -config TimeToMain.xml -scenario "ZipStartup" -type warm -log ZipStartupWarm -appname zip.exe</Args>
+            <Prep>prejit.prep.bat zip.exe</Prep>
+            <Iterations>1</Iterations>
+            <DefaultTier>0</DefaultTier>
+            <Owner>clyon</Owner>
+            <DefaultDegradeBar Threshold="5.000000" Type="Percentage" />
+            <Feature Area="Startup (PreJIT)" ProductUnit="CLR" Team="PERF" />
+            <Network Required="0" />
+            <Type Dynamic="0">v1</Type>
+            <SoftEnvironment Default="True" Memory="3984" Procs="4" />
+            <EnvironmentVariables>
+                <EnvironmentVariable />
+            </EnvironmentVariables>
+            <Group>ARM</Group>
+            <Group>CGAndPerf</Group>
+            <Group>Daily - 64 Bit</Group>
+            <Group>Daily - Private</Group>
+            <Group>PerCheckin</Group>
+            <Group>Theme Goals</Group>
+            <Scenarios Count="1" Time="2.775175"><Scenario Name="ConcurrentSpin"><Tier>0</Tier><Counters><Counter Name="GCPauseTimePercentage"><Units Inverted="False">%</Units><Results><Result>60.61556808142931</Result></Results><InvalidResults /></Counter><Counter Name="HeapCount"><Units Inverted="False">Count</Units><Results><Result>1</Result></Results><InvalidResults /></Counter><Counter Name="MaxAllocRateMBSec"><Units Inverted="False">MB</Units><Results><Result>284331.7177789314</Result></Results><InvalidResults /></Counter><Counter Name="MaxSizePeakMB"><Units Inverted="False">MB</Units><Results><Result>187.882328</Result></Results><InvalidResults /></Counter><Counter Name="MaxSuspendDurationMSec"><Units Inverted="False">MSec</Units><Results><Result>6.939301545782655</Result></Results><InvalidResults /></Counter><Counter Name="MeanCpuMSec"><Units Inverted="False">MSec</Units><Results><Result>0.0</Result></Results><InvalidResults /></Counter><Counter Name="MeanPauseDurationMSec"><Units Inverted="False">MSec</Units><Results><Result>9.316233369159434</Result></Results><InvalidResults /></Counter><Counter Name="MeanSizeAfterMB"><Units Inverted="False">MB</Units><Results><Result>124.66181428283976</Result></Results><InvalidResults /></Counter><Counter Name="MeanSizePeakMB"><Units Inverted="False">MB</Units><Results><Result>131.7486709960877</Result></Results><InvalidResults /></Counter><Counter Name="NumInduced"><Units Inverted="False">Count</Units><Results><Result>0</Result></Results><InvalidResults /></Counter><Counter Name="NumWithPinEvents"><Units Inverted="False">Count</Units><Results><Result>0</Result></Results><InvalidResults /></Counter><Counter Name="NumWithPinPlugEvents"><Units Inverted="False">Count</Units><Results><Result>0</Result></Results><InvalidResults /></Counter><Counter Name="PinnedObjectPercentage"><Units Inverted="False">%</Units><Results><Result>0</Result></Results><InvalidResults /></Counter><Counter Name="PinnedObjectSizes"><Units Inverted="False">Count</Units><Results><Result>0</Result></Results><InvalidResults /></Counter><Counter Name="ProcessDuration"><Units Inverted="False">Sec</Units><Results><Result>54991.620222173224</Result></Results><InvalidResults /></Counter><Counter Name="TotalAllocatedMB"><Units Inverted="False">MB</Units><Results><Result>21016.89949600015</Result></Results><InvalidResults /></Counter><Counter Name="TotalCpuMSec"><Units Inverted="False">MSec</Units><Results><Result>0.0</Result></Results><InvalidResults /></Counter><Counter Name="TotalPauseTimeMSec"><Units Inverted="False">MSec</Units><Results><Result>33333.48299485246</Result></Results><InvalidResults /></Counter><Counter Name="TotalPromotedMB"><Units Inverted="False">MB</Units><Results><Result>60800.461159999926</Result></Results><InvalidResults /></Counter><Counter Name="TotalSizeAfterMB"><Units Inverted="False">MB</Units><Results><Result>446039.97150400066</Result></Results><InvalidResults /></Counter><Counter Name="TotalSizePeakMB"><Units Inverted="False">MB</Units><Results><Result>471396.7448240018</Result></Results><InvalidResults /></Counter></Counters></Scenario></Scenarios>
+        </TestCase>
+        </TestCases>
+</LabRun>
